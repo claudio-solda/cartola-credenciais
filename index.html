@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0B3D2E">
+<meta name="theme-color" content="#161616">
 <title>Meu Cartola — Acesso</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chivo:wght@400;600;900&display=swap" rel="stylesheet">
@@ -21,9 +21,7 @@
   html,body{margin:0;padding:0;height:100%;}
   body{
     font-family:'Chivo', sans-serif;
-    background:
-      repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0 40px, rgba(255,255,255,0.05) 40px 80px),
-      linear-gradient(160deg, var(--pitch) 0%, var(--pitch-dark) 100%);
+    background: repeating-conic-gradient(#161616 0% 25%, #B3261E 0% 50%) 0 0/72px 72px;
     color:var(--chalk);
     min-height:100%;
     display:flex;
@@ -160,21 +158,26 @@
   <div id="lock">
     <div class="badge">
       <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="60" cy="60" r="58" fill="url(#bgGrad)" stroke="var(--gold-dim)" stroke-width="1.5"/>
         <defs>
           <radialGradient id="bgGrad" cx="35%" cy="30%" r="75%">
-            <stop offset="0%" stop-color="#B24E1D"/>
-            <stop offset="100%" stop-color="#4A1608"/>
+            <stop offset="0%" stop-color="#2A2A2A"/>
+            <stop offset="100%" stop-color="#0C0C0C"/>
           </radialGradient>
+          <linearGradient id="silver" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F2F2F2"/>
+            <stop offset="50%" stop-color="#B8BCC0"/>
+            <stop offset="100%" stop-color="#8A8F94"/>
+          </linearGradient>
         </defs>
+        <circle cx="60" cy="60" r="58" fill="url(#bgGrad)" stroke="url(#silver)" stroke-width="1.5"/>
         <!-- cartola / top hat, desenho estilo linha -->
-        <ellipse cx="60" cy="78" rx="30" ry="7" fill="none" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/>
-        <path d="M40 78 L44 42 C44 35 76 35 76 42 L80 78" fill="var(--pitch-dark)" stroke="var(--gold)" stroke-width="3" stroke-linejoin="round"/>
-        <path d="M44 50 L76 50" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/>
-        <path d="M44 50 C40 50 40 58 44 58 L76 58 C80 58 80 50 76 50" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+        <ellipse cx="60" cy="78" rx="30" ry="7" fill="none" stroke="url(#silver)" stroke-width="3" stroke-linecap="round"/>
+        <path d="M40 78 L44 42 C44 35 76 35 76 42 L80 78" fill="#0c0c0c" stroke="url(#silver)" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M44 50 L76 50" stroke="url(#silver)" stroke-width="3" stroke-linecap="round"/>
+        <path d="M44 50 C40 50 40 58 44 58 L76 58 C80 58 80 50 76 50" fill="none" stroke="url(#silver)" stroke-width="2.5"/>
         <!-- bolinha na aba, referência ao Cartola FC -->
-        <circle cx="60" cy="94" r="5.5" fill="var(--gold)"/>
-        <path d="M60 90.5 L62 92.5 L61.2 95 L58.8 95 L58 92.5 Z" fill="#4A1608"/>
+        <circle cx="60" cy="94" r="5.5" fill="url(#silver)"/>
+        <path d="M60 90.5 L62 92.5 L61.2 95 L58.8 95 L58 92.5 Z" fill="#0c0c0c"/>
       </svg>
     </div>
     <h1>Meu Cartola</h1>
