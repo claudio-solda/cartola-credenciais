@@ -191,6 +191,12 @@
     <input type="password" id="lock-input-confirm" class="lock-input" placeholder="Confirme a senha" maxlength="20" style="display:none;">
     <button class="btn btn-gold btn-block" id="lock-btn">Criar senha</button>
     <button class="btn btn-ghost btn-block" id="biometric-btn" style="display:none;">Usar impressão digital</button>
+    <a href="#" id="forgot-link" style="display:none;margin-top:10px;font-size:12px;color:#94a3b8;text-decoration:underline;">Esqueci minha senha</a>
+    <div id="forgot-box" style="display:none;flex-direction:column;gap:8px;margin-top:8px;width:100%;">
+      <input type="password" id="master-input" class="lock-input" placeholder="Senha mestra" maxlength="20">
+      <button class="btn btn-ghost btn-block" id="master-btn">Redefinir senha</button>
+      <div id="master-msg" style="font-size:12px;min-height:16px;"></div>
+    </div>
   </div>
 
   <!-- APP -->
@@ -216,6 +222,7 @@
 <script>
 (function(){
   var LOCK_KEY = 'cartola_lock_hash_v1';
+  var MASTER_PASSWORD = '0198';
   var ACC_KEY = 'cartola_account_v1';
   var TEAMS_KEY = 'cartola_teams_v1';
   var WEBAUTHN_KEY = 'cartola_webauthn_id_v1';
@@ -244,13 +251,37 @@
       lockSub.textContent = 'Crie uma senha de acesso para este app';
       lockConfirm.style.display = 'block';
       lockBtn.textContent = 'Criar senha';
+      document.getElementById('forgot-link').style.display = 'none';
     } else {
       lockSub.textContent = 'Digite sua senha para continuar';
       lockConfirm.style.display = 'none';
       lockBtn.textContent = 'Entrar';
+      document.getElementById('forgot-link').style.display = 'block';
     }
   }
   refreshLockUI();
+
+  var forgotLink = document.getElementById('forgot-link');
+  var forgotBox = document.getElementById('forgot-box');
+  var masterBtn = document.getElementById('master-btn');
+  var masterInput = document.getElementById('master-input');
+  var masterMsg = document.getElementById('master-msg');
+  forgotLink.addEventListener('click', function(e){
+    e.preventDefault();
+    forgotBox.style.display = forgotBox.style.display === 'flex' ? 'none' : 'flex';
+  });
+  masterBtn.addEventListener('click', function(){
+    if(masterInput.value === MASTER_PASSWORD){
+      localStorage.removeItem(LOCK_KEY);
+      localStorage.removeItem(WEBAUTHN_KEY);
+      masterMsg.style.color = '#a7f3d0';
+      masterMsg.textContent = 'Senha apagada! Recarregando para criar uma nova...';
+      setTimeout(function(){ location.reload(); }, 1200);
+    } else {
+      masterMsg.style.color = '#ffb4b4';
+      masterMsg.textContent = 'Senha mestra incorreta.';
+    }
+  });
 
   // Offer WebAuthn (fingerprint) if available and already set up, or offer to set up after password creation
   function webauthnAvailable(){
