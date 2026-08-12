@@ -55,7 +55,7 @@
   }
   .badge svg{width:100%;height:100%;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.4));}
   #lock h1{font-size:40px;margin:0 0 4px;color:var(--chalk);}
-  #lock p.sub{color:#C7D6CC;margin:0 0 28px;font-size:14px;}
+  #lock p.sub{color:#C7D6CC;margin:0 0 28px;font-size:16px;}
   .lock-input{
     width:100%;max-width:280px;
     background:rgba(244,241,230,0.06);
@@ -63,7 +63,7 @@
     border-radius:10px;
     padding:14px 16px;
     color:var(--chalk);
-    font-size:16px;
+    font-size:18px;
     letter-spacing:0.3em;
     text-align:center;
     margin-bottom:14px;
@@ -72,7 +72,7 @@
   .btn{
     border:none;border-radius:10px;
     padding:14px 20px;
-    font-family:'Chivo',sans-serif;font-weight:600;font-size:15px;
+    font-family:'Chivo',sans-serif;font-weight:600;font-size:17px;
     cursor:pointer;
     transition:transform .08s ease, opacity .15s ease;
   }
@@ -80,8 +80,8 @@
   .btn-gold{background:var(--gold);color:var(--pitch-dark);}
   .btn-ghost{background:transparent;color:var(--chalk);border:1px solid var(--line);}
   .btn-block{width:100%;max-width:280px;}
-  #lock-error{color:#E8938A;font-size:13px;height:16px;margin-bottom:6px;}
-  #biometric-btn{margin-top:10px;font-size:13px;opacity:0.85;}
+  #lock-error{color:#E8938A;font-size:14px;height:18px;margin-bottom:6px;}
+  #biometric-btn{margin-top:10px;font-size:15px;opacity:0.85;}
 
   /* ---- Main app ---- */
   #app{display:none;width:100%;}
@@ -91,7 +91,7 @@
     margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line);
   }
   header.top h1{font-size:32px;color:var(--gold);margin:0;}
-  header.top .lockbtn{background:none;border:none;color:#C7D6CC;font-size:12px;cursor:pointer;text-decoration:underline;}
+  header.top .lockbtn{background:none;border:none;color:#C7D6CC;font-size:14px;cursor:pointer;text-decoration:underline;}
 
   section.card{
     background:rgba(244,241,230,0.05);
@@ -100,12 +100,12 @@
     padding:18px;
     margin-bottom:18px;
   }
-  section.card h2{font-size:22px;color:var(--chalk);margin:0 0 4px;}
+  section.card h2{font-size:24px;color:var(--chalk);margin:0 0 4px;}
   section.card p.eyebrow{
-    font-size:11px;text-transform:uppercase;letter-spacing:0.14em;
+    font-size:12px;text-transform:uppercase;letter-spacing:0.14em;
     color:var(--gold);margin:0 0 10px;font-weight:600;font-family:'Chivo',sans-serif;
   }
-  label{display:block;font-size:12px;color:#C7D6CC;margin:12px 0 6px;}
+  label{display:block;font-size:14px;color:#C7D6CC;margin:12px 0 6px;}
   input[type=text],input[type=email],input[type=password]{
     width:100%;
     background:rgba(0,0,0,0.2);
@@ -114,14 +114,14 @@
     padding:12px 12px;
     color:var(--chalk);
     font-family:'Chivo',sans-serif;
-    font-size:15px;
+    font-size:17px;
   }
   input:focus{outline:none;border-color:var(--gold);}
   .pw-row{position:relative;}
   .pw-row button{
     position:absolute;right:6px;top:50%;transform:translateY(-50%);
     background:#1B1B1B;border:1px solid var(--gold-dim);color:var(--chalk);
-    font-size:12px;font-weight:600;cursor:pointer;
+    font-size:13px;font-weight:600;cursor:pointer;
     padding:6px 10px;border-radius:6px;
   }
   .save-row{display:flex;gap:10px;margin-top:16px;}
@@ -137,21 +137,21 @@
     margin-bottom:12px;
     background:rgba(0,0,0,0.12);
   }
-  .team-card label{margin:0 0 5px;font-size:13px;}
-  .team-card input{padding:11px 12px;font-size:17px;margin-bottom:10px;}
+  .team-card label{margin:0 0 5px;font-size:15px;}
+  .team-card input{padding:12px 12px;font-size:19px;margin-bottom:10px;}
   .team-card .pw-row input{margin-bottom:0;padding-right:78px;}
   .team-card .del{
     position:absolute;top:10px;right:8px;
-    background:none;border:none;color:#E8938A;font-size:20px;cursor:pointer;
+    background:none;border:none;color:#E8938A;font-size:22px;cursor:pointer;
     line-height:1;padding:4px 8px;
   }
   .add-team{
     margin-top:14px;width:100%;background:transparent;color:var(--gold);
     border:1px dashed var(--gold-dim);border-radius:8px;padding:10px;
-    font-family:'Chivo',sans-serif;font-size:14px;cursor:pointer;
+    font-family:'Chivo',sans-serif;font-size:16px;cursor:pointer;
   }
-  .empty-hint{font-size:13px;color:#8FA697;padding:8px 0;}
-  footer.credit{text-align:center;color:#6E8577;font-size:11px;margin-top:8px;}
+  .empty-hint{font-size:15px;color:#8FA697;padding:8px 0;}
+  footer.credit{text-align:center;color:#6E8577;font-size:12px;margin-top:8px;}
 </style>
 </head>
 <body>
@@ -214,7 +214,19 @@
       <button class="add-team" id="add-team-btn">+ adicionar time</button>
     </section>
 
-    <footer class="credit">Salvo apenas neste aparelho</footer>
+    <section class="card">
+      <p class="eyebrow">Segurança dos dados</p>
+      <h2>Backup</h2>
+      <p class="empty-hint" style="margin-top:0;">Se o app perder os dados (cache limpo, troca de aparelho), use o backup para restaurar.</p>
+      <div class="save-row">
+        <button class="btn btn-gold" id="export-btn">Exportar backup</button>
+        <button class="btn btn-ghost" id="import-btn">Importar backup</button>
+      </div>
+      <input type="file" id="import-file" accept="application/json,.json" style="display:none;">
+      <div id="backup-msg" style="font-size:13px;min-height:18px;margin-top:8px;"></div>
+    </section>
+
+    <footer class="credit">Salvo neste aparelho — exporte um backup regularmente</footer>
   </div>
 
 </div>
@@ -495,6 +507,69 @@
       var firstInput = lastCard.querySelector('input');
       if(firstInput) firstInput.focus();
     }
+  });
+
+  // ---- Backup: exportar / importar ----
+  var backupMsg = document.getElementById('backup-msg');
+
+  function showBackupMsg(text, ok){
+    backupMsg.textContent = text;
+    backupMsg.style.color = ok ? '#9FD6B4' : '#E8938A';
+    setTimeout(function(){ backupMsg.textContent=''; }, 4000);
+  }
+
+  document.getElementById('export-btn').addEventListener('click', function(){
+    var teams = getTeams();
+    if(!teams.length){
+      showBackupMsg('Nenhum time cadastrado para exportar.', false);
+      return;
+    }
+    var payload = {
+      app: 'meu-cartola',
+      exportado_em: new Date().toISOString(),
+      teams: teams
+    };
+    var blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    var dataHoje = new Date().toISOString().slice(0,10);
+    a.href = url;
+    a.download = 'meu-cartola-backup-' + dataHoje + '.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showBackupMsg('Backup exportado com sucesso.', true);
+  });
+
+  var importInput = document.getElementById('import-file');
+  document.getElementById('import-btn').addEventListener('click', function(){
+    importInput.value = '';
+    importInput.click();
+  });
+
+  importInput.addEventListener('change', function(e){
+    var file = e.target.files[0];
+    if(!file) return;
+    var reader = new FileReader();
+    reader.onload = function(evt){
+      try{
+        var data = JSON.parse(evt.target.result);
+        var incoming = Array.isArray(data) ? data : data.teams;
+        if(!Array.isArray(incoming)) throw new Error('formato inválido');
+        incoming = incoming.map(function(t){
+          return {name: t.name || '', email: t.email || '', pass: t.pass || ''};
+        });
+        var existentes = getTeams();
+        var merged = existentes.concat(incoming);
+        setTeams(merged);
+        renderTeams();
+        showBackupMsg(incoming.length + ' time(s) restaurado(s) do backup.', true);
+      }catch(err){
+        showBackupMsg('Arquivo inválido. Selecione um backup exportado por este app.', false);
+      }
+    };
+    reader.readAsText(file);
   });
 
 })();
