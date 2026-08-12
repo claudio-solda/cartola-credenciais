@@ -14,11 +14,12 @@
   :root{
     --pitch:#7A2A0F;
     --pitch-dark:#4A1608;
-    --chalk:#F4F1E6;
-    --gold:#FF7A33;
+    --chalk:#FFFFFF;
+    --dim:#E8E4D8;
+    --gold:#FFA033;
     --gold-dim:#B24E1D;
-    --danger:#E8938A;
-    --line: rgba(244,241,230,0.16);
+    --danger:#FF9B90;
+    --line: rgba(255,255,255,0.32);
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;height:100%;}
@@ -55,7 +56,7 @@
   }
   .badge svg{width:100%;height:100%;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.4));}
   #lock h1{font-size:40px;margin:0 0 4px;color:var(--chalk);}
-  #lock p.sub{color:#C7D6CC;margin:0 0 28px;font-size:16px;}
+  #lock p.sub{color:var(--dim);margin:0 0 28px;font-size:16px;}
   .lock-input{
     width:100%;max-width:280px;
     background:rgba(244,241,230,0.06);
@@ -80,7 +81,7 @@
   .btn-gold{background:var(--gold);color:var(--pitch-dark);}
   .btn-ghost{background:transparent;color:var(--chalk);border:1px solid var(--line);}
   .btn-block{width:100%;max-width:280px;}
-  #lock-error{color:#E8938A;font-size:14px;height:18px;margin-bottom:6px;}
+  #lock-error{color:#FF9B90;font-size:14px;height:18px;margin-bottom:6px;}
   #biometric-btn{margin-top:10px;font-size:15px;opacity:0.85;}
 
   /* ---- Main app ---- */
@@ -91,7 +92,7 @@
     margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line);
   }
   header.top h1{font-size:32px;color:var(--gold);margin:0;}
-  header.top .lockbtn{background:none;border:none;color:#C7D6CC;font-size:14px;cursor:pointer;text-decoration:underline;}
+  header.top .lockbtn{background:none;border:none;color:var(--dim);font-size:14px;cursor:pointer;text-decoration:underline;}
 
   section.card{
     background:rgba(244,241,230,0.05);
@@ -105,10 +106,10 @@
     font-size:12px;text-transform:uppercase;letter-spacing:0.14em;
     color:var(--gold);margin:0 0 10px;font-weight:600;font-family:'Chivo',sans-serif;
   }
-  label{display:block;font-size:14px;color:#C7D6CC;margin:12px 0 6px;}
+  label{display:block;font-size:14px;color:var(--dim);margin:12px 0 6px;}
   input[type=text],input[type=email],input[type=password]{
     width:100%;
-    background:rgba(0,0,0,0.2);
+    background:rgba(0,0,0,0.4);
     border:1px solid var(--line);
     border-radius:8px;
     padding:12px 12px;
@@ -126,7 +127,7 @@
   }
   .save-row{display:flex;gap:10px;margin-top:16px;}
   .save-row .btn{flex:1;}
-  .saved-tag{font-size:12px;color:#9FD6B4;margin-top:8px;display:none;}
+  .saved-tag{font-size:12px;color:#7CE8A4;margin-top:8px;display:none;}
 
   /* team cards */
   .team-card{
@@ -135,14 +136,14 @@
     border-radius:10px;
     padding:14px 40px 6px 14px;
     margin-bottom:12px;
-    background:rgba(0,0,0,0.12);
+    background:rgba(0,0,0,0.28);
   }
   .team-card label{margin:0 0 5px;font-size:15px;}
   .team-card input{padding:12px 12px;font-size:19px;margin-bottom:10px;}
   .team-card .pw-row input{margin-bottom:0;padding-right:78px;}
   .team-card .del{
     position:absolute;top:10px;right:8px;
-    background:none;border:none;color:#E8938A;font-size:22px;cursor:pointer;
+    background:none;border:none;color:#FF9B90;font-size:22px;cursor:pointer;
     line-height:1;padding:4px 8px;
   }
   .add-team{
@@ -150,8 +151,8 @@
     border:1px dashed var(--gold-dim);border-radius:8px;padding:10px;
     font-family:'Chivo',sans-serif;font-size:16px;cursor:pointer;
   }
-  .empty-hint{font-size:15px;color:#8FA697;padding:8px 0;}
-  footer.credit{text-align:center;color:#6E8577;font-size:12px;margin-top:8px;}
+  .empty-hint{font-size:15px;color:#C7CFC5;padding:8px 0;}
+  footer.credit{text-align:center;color:#9AA69B;font-size:12px;margin-top:8px;}
 </style>
 </head>
 <body>
@@ -514,7 +515,7 @@
 
   function showBackupMsg(text, ok){
     backupMsg.textContent = text;
-    backupMsg.style.color = ok ? '#9FD6B4' : '#E8938A';
+    backupMsg.style.color = ok ? '#7CE8A4' : '#FF9B90';
     setTimeout(function(){ backupMsg.textContent=''; }, 4000);
   }
 
